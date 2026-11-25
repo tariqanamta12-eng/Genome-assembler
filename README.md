@@ -1,4 +1,4 @@
-# Genome Assembler (de Bruijn graph, C++17)
+# Genome Assembler (de Bruijn graph, C++)
 
 Short-read genome assembler built for an OOP-with-C++ course.
 
