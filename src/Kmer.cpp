@@ -46,5 +46,16 @@ Kmer Kmer::canonical() const {
     Kmer rc = reverseComplement();
     return (rc.bits_ < bits_) ? rc : *this;
 }
+double Kmer::gcContent() const {
+    std::string sequence = toString();
+    std::size_t gcCount = 0;
 
+    for (char base : sequence) {
+        if (base == 'G' || base == 'C') {
+            gcCount++;
+        }
+    }
+
+    return static_cast<double>(gcCount) / k_;
+}
 }  // namespace assembler

@@ -13,7 +13,7 @@ public:
 
     // Throws std::invalid_argument on bad characters or k > MAX_K / k == 0.
     explicit Kmer(const std::string& sequence);
-
+    double gcContent() const;
     std::size_t k() const { return k_; }
     std::uint64_t bits() const { return bits_; }
 

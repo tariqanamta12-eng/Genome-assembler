@@ -26,3 +26,8 @@ TEST(Kmer, InvalidInputThrows) {
     EXPECT_THROW(Kmer(""), std::invalid_argument);
     EXPECT_THROW(Kmer(std::string(32, 'A')), std::invalid_argument);
 }
+TEST(Kmer, GcContent) {
+    EXPECT_DOUBLE_EQ(Kmer("GGCC").gcContent(), 1.0);
+    EXPECT_DOUBLE_EQ(Kmer("AATT").gcContent(), 0.0);
+    EXPECT_DOUBLE_EQ(Kmer("ACGT").gcContent(), 0.5);
+}
